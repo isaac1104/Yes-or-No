@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Menu } from 'antd';
+import { Button, Layout, Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
 
 const { Header } = Layout;
@@ -18,7 +18,13 @@ class Navbar extends Component {
             >
             <Item key='1'>Home</Item>
             <Item key='2'>Gallery</Item>
-            <a href='/api/signout' style={{ float: 'right' }}>Sign Out</a>
+            <a href='/api/signout' style={{ float: 'right' }}>
+              <Button
+                type='danger'
+                >
+                <Icon type='logout' /> Sign Out
+              </Button>
+            </a>
           </Menu>
         </Header>
       );
