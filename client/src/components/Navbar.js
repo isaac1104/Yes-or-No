@@ -18,6 +18,7 @@ class Navbar extends Component {
             >
             <Item key='1'>Home</Item>
             <Item key='2'>Gallery</Item>
+            <a href='/api/signout' style={{ float: 'right' }}>Sign Out</a>
           </Menu>
         </Header>
       );
