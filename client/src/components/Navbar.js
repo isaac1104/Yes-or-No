@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
-import { Button, Layout, Menu, Icon } from 'antd';
+import { Button, Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
 
-const { Header } = Layout;
 const { Item } = Menu;
 
 class Navbar extends Component {
   render() {
     if (this.props.auth.userData) {
       return (
-        <Header className='navbar'>
-          <Menu
-            theme='dark'
-            mode='horizontal'
-            defaultSelectedKeys={[ '1' ]}
-            style={{ lineHeight: '64px' }}
-            >
-            <Item key='1'>Home</Item>
-            <Item key='2'>Gallery</Item>
-            <a href='/api/signout' style={{ float: 'right' }}>
-              <Button
-                type='danger'
-                >
-                <Icon type='logout' /> Sign Out
-              </Button>
-            </a>
-          </Menu>
-        </Header>
+        <Menu
+          defaultSelectedKeys={[ '1' ]}
+          mode='horizontal'
+          theme='dark'
+          className='navbar'
+        >
+          <Item key='1'>
+            <Icon type='home' /> Home
+          </Item>
+          <Item key='2'>
+            <Icon type='picture' /> Gallery
+          </Item>
+          <Item key='3' style={{ float: 'right' }}>
+            <Button type='danger'>
+              <a href='/api/signout'>
+              <Icon type='logout' /> Sign Out</a>
+            </Button>
+          </Item>
+        </Menu>
       );
     }
 
