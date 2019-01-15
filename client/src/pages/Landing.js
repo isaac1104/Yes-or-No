@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleButton from '../components/GoogleButton';
 
 const styles = {
   container: {
@@ -16,6 +17,7 @@ const Landing = () => (
   <div style={styles.container}>
     <div>
       <h1>Yee or Nee</h1>
+      <GoogleButton />
     </div>
   </div>
 );
