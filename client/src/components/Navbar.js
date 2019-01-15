@@ -20,7 +20,7 @@ class Navbar extends Component {
           <Item key='2'>
             <Icon type='picture' /> Gallery
           </Item>
-          <Item key='3' style={{ float: 'right' }}>
+          <Item key='3' style={{ float: 'right' }} className='signout'>
             <Button type='danger'>
               <a href='/api/signout'>
               <Icon type='logout' /> Sign Out</a>

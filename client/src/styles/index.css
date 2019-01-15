@@ -12,6 +12,14 @@ h1, h2, h3, h4, h5, h6, p {
   color: #ffffff;
 }
 
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: #00aca4;
+}
+
+.signout {
+  background-color: transparent !important;
+}
+
 .loginBtn {
   box-sizing: border-box;
   position: relative;
