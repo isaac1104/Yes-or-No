@@ -8,12 +8,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#282c34',
-    color: '#ffffff',
     textAlign: 'center'
-  },
-  text: {
-    color: '#ffffff'
   }
 };
 
@@ -21,7 +16,7 @@ const Landing = () => (
   <div style={styles.container}>
     <div>
       <img src={yeeLogo} alt='yee-logo' />
-      <h1 style={styles.text}>Yee or Nee</h1>
+      <h1>Yee or Nee</h1>
       <GoogleButton />
     </div>
   </div>
