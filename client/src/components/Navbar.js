@@ -9,7 +9,7 @@ class Navbar extends Component {
   render() {
     if (this.props.auth.userData) {
       return (
-        <Header>
+        <Header className='navbar'>
           <Menu
             theme='dark'
             mode='horizontal'
