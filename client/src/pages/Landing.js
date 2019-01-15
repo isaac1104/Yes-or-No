@@ -14,7 +14,7 @@ const styles = {
 };
 
 const Landing = () => (
-  <div style={styles.container}>
+  <div style={styles.container} className='landing'>
     <div>
       <Avatar src={yeeLogo} size='large' shape='square' />
       <h1>Yee or Nee</h1>
