@@ -1,4 +1,5 @@
 import React from 'react';
+import { Avatar } from 'antd';
 import GoogleButton from '../components/GoogleButton';
 import yeeLogo from '../assets/yee.png';
 
@@ -15,7 +16,7 @@ const styles = {
 const Landing = () => (
   <div style={styles.container}>
     <div>
-      <img src={yeeLogo} alt='yee-logo' />
+      <Avatar src={yeeLogo} size='large' shape='square' />
       <h1>Yee or Nee</h1>
       <GoogleButton />
     </div>
