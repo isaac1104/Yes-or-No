@@ -10,7 +10,6 @@ class Home extends Component {
 
   render() {
     const { userData } = this.props.auth;
-    console.log(userData);
     return (
       <div>
         <h1><Avatar src={userData.avatar} size='large' /> Welcome, {userData.firstName}</h1>

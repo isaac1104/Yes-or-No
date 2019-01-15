@@ -2,7 +2,7 @@ import { REQUEST_AUTH, AUTH_SUCCESS, AUTH_ERROR } from '../actions/types';
 
 const INITIAL_STATE = {
   isAuthenticating: null,
-  userData: [],
+  userData: '',
   errorMsg: ''
 }
 
