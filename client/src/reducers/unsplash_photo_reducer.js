@@ -2,7 +2,7 @@ import { REQUEST_UNSPLASH_PHOTO, RECEIVE_UNSPLASH_PHOTO, REJECT_UNSPLASH_PHOTO }
 
 const INITIAL_STATE = {
   isFetching: false,
-  data: [],
+  data: {},
   error: ''
 };
 
@@ -12,7 +12,7 @@ const unsplashPhotoReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: action.payload,
-        data: [],
+        data: {},
         error: ''
       };
     case RECEIVE_UNSPLASH_PHOTO:
@@ -26,7 +26,7 @@ const unsplashPhotoReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        data: [],
+        data: {},
         error: action.payload
       };
     default:

@@ -9,7 +9,7 @@ module.exports = app => {
       const { data } = request;
       res.send(data);
     } catch (e) {
-      res.send(e)
+      res.send(e);
     }
   });
 };

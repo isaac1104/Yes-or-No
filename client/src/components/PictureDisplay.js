@@ -8,15 +8,22 @@ class PictureDisplay extends Component {
     this.props.fetchUnsplashPhoto();
   }
 
-  // componentDidUpdate() {
-  //   this.props.fetchUnsplashPhoto();
-  // }
+  renderPhoto() {
+    const { isFetching, data } = this.props.photo;
+    if (isFetching) {
+      return <h1>Loading...</h1>;
+    }
+
+    if (data.urls) {
+      return <img src={data.urls.small} alt={data.description} style={{ width: '25em', height: '30em' }} />;
+    }
+
+    return null;
+  }
 
   render() {
-    console.log(this.props.photo);
     const styles = {
       frame: {
-        border: '2px solid #ffffff',
         height: '30em',
         width: '25em',
         display: 'flex',
@@ -31,11 +38,11 @@ class PictureDisplay extends Component {
     return (
       <div>
         <div style={styles.frame}>
-          <h1>Picture</h1>
+          {this.renderPhoto()}
         </div>
         <div style={styles.buttonGroup}>
           <SelectButton title='Yee' type='primary' size='large' />
-          <SelectButton title='Nee' type='danger' size='large' />
+          <SelectButton title='Nee' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
         </div>
       </div>
     );
