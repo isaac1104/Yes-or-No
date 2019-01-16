@@ -23,7 +23,7 @@ class Gallery extends Component {
     return data.map((photo, i) => {
       return (
         <div
-          style={{ margin: '1em 0 1em 0' }}
+          style={{ margin: '2em 0 2em 0', width: '25em', height: '30em' }}
           key={i}
         >
           <Picture

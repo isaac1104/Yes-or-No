@@ -18,7 +18,8 @@ class Navbar extends Component {
     const styles = {
       navbar: {
         position: 'sticky',
-        top: 0
+        top: 0,
+        zIndex: 9999
       }
     };
 
