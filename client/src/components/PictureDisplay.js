@@ -19,7 +19,7 @@ class PictureDisplay extends Component {
         margin: 'auto'
       },
       buttonGroup: {
-        marginTop: '5em'
+        marginTop: '3em'
       }
     };
 

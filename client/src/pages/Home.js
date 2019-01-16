@@ -8,7 +8,7 @@ class Home extends Component {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '80vh'
       }
     };
 
