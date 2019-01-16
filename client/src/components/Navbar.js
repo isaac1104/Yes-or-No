@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const { Item } = Menu;
 
@@ -15,10 +16,10 @@ class Navbar extends Component {
           className='navbar'
         >
           <Item key='1'>
-            <Icon type='home' /> Home
+            <Icon type='home' /> <Link to='/home'>Home</Link>
           </Item>
           <Item key='2'>
-            <Icon type='picture' /> Gallery
+            <Icon type='picture' /> <Link to='/gallery'>Gallery</Link>
           </Item>
           <Item key='3' style={{ float: 'right' }} className='signout'>
             <Button type='danger' ghost>

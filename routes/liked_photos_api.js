@@ -9,7 +9,6 @@ module.exports = app => {
   });
 
   app.post('/api/liked_photos', requireAuth, async (req, res) => {
-    console.log(req);
     const { url } = req.body;
     const currentPhoto = await LikedPhotos.findOne({ url });
     if (currentPhoto) return;

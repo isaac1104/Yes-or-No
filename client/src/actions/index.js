@@ -34,12 +34,13 @@ export const fetchLikedPhotos = () => async dispatch => {
   }
 };
 
-export const saveUnsplashPhoto = url => async dispatch => {
+export const saveUnsplashPhoto = (url, callback) => async dispatch => {
   dispatch({ type: types.INITIALIZE_SAVING_PHOTO, payload: true });
   try {
     const request = await axios.post('/api/liked_photos', url);
     const { data } = request;
     dispatch({ type: types.SAVING_PHOTO_SUCCESS, payload: data });
+    callback();
   } catch (e) {
     dispatch({ type: types.SAVING_PHOTO_FAIL, payload: e });
   }
