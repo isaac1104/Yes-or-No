@@ -21,4 +21,15 @@ module.exports = app => {
       res.status(400).send(e);
     }
   });
+
+  app.delete('/api/liked_photos', requireAuth, async (req, res) => {
+    const { url } = req.query;
+    try {
+      const likedPhoto = await LikedPhotos.deleteOne({ url });
+      res.status(201);
+      res.json();
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  });
 };

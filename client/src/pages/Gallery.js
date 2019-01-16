@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchLikedPhotos } from '../actions';
+import { fetchLikedPhotos, deleteSavedPhoto } from '../actions';
 import { Button, Icon } from 'antd';
 import Spinner from '../components/Spinner';
 import Picture from '../components/Picture';
@@ -31,7 +31,13 @@ class Gallery extends Component {
             alt={photo.id}
             style={{ width: '100%', height: '100%' }}
           />
-          <Button block type='danger'><Icon type='delete' /></Button>
+          <Button
+            block
+            type='danger'
+            onClick={() => this.props.deleteSavedPhoto(photo.url)}
+          >
+            <Icon type='delete' />
+          </Button>
         </div>
       );
     });
@@ -58,4 +64,4 @@ const mapStateToProps = ({ likedPhotos }) => {
   return { likedPhotos }
 };
 
-export default connect(mapStateToProps, { fetchLikedPhotos })(Gallery);
+export default connect(mapStateToProps, { fetchLikedPhotos, deleteSavedPhoto })(Gallery);

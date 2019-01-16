@@ -45,3 +45,17 @@ export const saveUnsplashPhoto = (url, callback) => async dispatch => {
     dispatch({ type: types.SAVING_PHOTO_FAIL, payload: e });
   }
 };
+
+export const deleteSavedPhoto = url => async dispatch => {
+  try {
+    const request = await axios.delete('/api/liked_photos', {
+      params: {
+        url
+      }
+    });
+    const { data } = request;
+    dispatch({ type: types.DELETE_SAVED_PHOTO, payload: data });
+  } catch (e) {
+    dispatch({ type: types.DELETE_SAVED_PHOTO, payload: e });
+  }
+};
