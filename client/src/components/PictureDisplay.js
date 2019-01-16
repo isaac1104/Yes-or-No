@@ -14,12 +14,12 @@ class PictureDisplay extends Component {
     const { isFetching, data: { urls, description } } = this.props.photo;
     const styles = {
       frame: {
-        height: '30em',
+        height: '25em',
         width: '25em',
         margin: 'auto'
       },
       buttonGroup: {
-        marginTop: '2em'
+        marginTop: '5em'
       }
     };
 
