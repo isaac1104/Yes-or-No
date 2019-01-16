@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SelectButton from './SelectButton';
+import Spinner from './Spinner';
 import { connect } from 'react-redux';
 import { fetchUnsplashPhoto } from '../actions';
 
@@ -11,7 +12,7 @@ class PictureDisplay extends Component {
   renderPhoto() {
     const { isFetching, data } = this.props.photo;
     if (isFetching) {
-      return <h1>Loading...</h1>;
+      return <Spinner />;
     }
 
     if (data.urls) {
@@ -26,9 +27,7 @@ class PictureDisplay extends Component {
       frame: {
         height: '30em',
         width: '25em',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        margin: 'auto'
       },
       buttonGroup: {
         marginTop: '2em'
