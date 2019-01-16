@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 };
 
 const unsplashPhotoReducer = (state = INITIAL_STATE, action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case REQUEST_UNSPLASH_PHOTO:
       return {
         ...state,
