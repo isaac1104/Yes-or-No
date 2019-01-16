@@ -22,3 +22,25 @@ export const fetchUnsplashPhoto = () => async dispatch => {
     dispatch({ type: types.REJECT_UNSPLASH_PHOTO, payload: e });
   }
 };
+
+export const fetchLikedPhotos = () => async dispatch => {
+  dispatch({ type: types.REQUEST_LIKED_PHOTO, payload: true });
+  try {
+    const request = await axios.get('/api/liked_photos');
+    const { data } = request;
+    dispatch({ type: types.RECEIVE_LIKED_PHOTO, payload: data });
+  } catch (e) {
+    dispatch({ type: types.REJECT_LIKED_PHOTO, payload: e });
+  }
+};
+
+export const saveUnsplashPhoto = url => async dispatch => {
+  dispatch({ type: types.INITIALIZE_SAVING_PHOTO, payload: true });
+  try {
+    const request = await axios.post('/api/liked_photos', url);
+    const { data } = request;
+    dispatch({ type: types.SAVING_PHOTO_SUCCESS, payload: data });
+  } catch (e) {
+    dispatch({ type: types.SAVING_PHOTO_FAIL, payload: e });
+  }
+};

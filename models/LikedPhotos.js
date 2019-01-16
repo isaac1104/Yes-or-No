@@ -6,4 +6,4 @@ const likedPhotosSchema = new Schema({
   _user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
-mongoose.model('LikedPhotos', likedPhotosSchema);
+mongoose.model('likedPhotos', likedPhotosSchema);

@@ -8,6 +8,7 @@ const path = require('path');
 const PORT = process.env.PORT || 5000;
 
 require('./models/User');
+require('./models/LikedPhotos');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
@@ -25,6 +26,7 @@ app.use(passport.session());
 require('./routes/test_route')(app);
 require('./routes/auth_route')(app);
 require('./routes/unsplash_photo_api')(app);
+require('./routes/liked_photos_api')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -36,16 +38,3 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(PORT, () => {
   console.log(`Server on PORT: ${PORT}`);
 });
-
-/*
-1. Create 'dev.js' file inside the config folder.
-2. Paste the code below and replace the key values.
-
-module.exports = {
-  googleClientID: 'YOUR_GOOGLE_CLIENT_ID',
-  googleClientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
-  mongodbURI: 'YOUR_MONGODB_URI',
-  cookieKey: 'RANDOM_STRING',
-};
-
-*/

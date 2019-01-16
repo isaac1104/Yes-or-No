@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import SelectButton from './SelectButton';
 import Spinner from './Spinner';
 import { connect } from 'react-redux';
-import { fetchUnsplashPhoto } from '../actions';
+import { fetchUnsplashPhoto, saveUnsplashPhoto } from '../actions';
 
 class PictureDisplay extends Component {
   componentDidMount() {
@@ -38,7 +38,7 @@ class PictureDisplay extends Component {
             />
           </div>
           <div style={styles.buttonGroup}>
-            <SelectButton title='Yee' type='primary' size='large' onClick={() => console.log(urls.small)} />
+            <SelectButton title='Yee' type='primary' size='large' onClick={() => this.props.saveUnsplashPhoto({ url: urls.small })} />
             <SelectButton title='Nee' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
           </div>
         </div>
@@ -57,4 +57,4 @@ const mapStateToProps = ({ photo }) => {
   return { photo }
 };
 
-export default connect(mapStateToProps, { fetchUnsplashPhoto })(PictureDisplay);
+export default connect(mapStateToProps, { fetchUnsplashPhoto, saveUnsplashPhoto })(PictureDisplay);
