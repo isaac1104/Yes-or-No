@@ -17,7 +17,13 @@ class Home extends Component {
     }
 
     if (data.length === 0) {
-      return <h3 style={{ marginTop: '10em' }}>You don't have any liked photos</h3>;
+      return (
+        <div style={{ marginTop: '10em', textAlign: 'center' }}>
+          <h3>Welcome, {this.props.auth.userData.firstName} !</h3>
+          <h3>Check out the gallery & save whatever photos you like</h3>
+          <h3>Your liked photos will be displayed here</h3>
+        </div>
+      );
     }
 
     return data.map((photo, i) => {
@@ -60,8 +66,8 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ likedPhotos }) => {
-  return { likedPhotos }
+const mapStateToProps = ({ auth, likedPhotos }) => {
+  return { auth, likedPhotos }
 };
 
 export default connect(mapStateToProps, { fetchLikedPhotos, deleteSavedPhoto })(Home);

@@ -42,7 +42,8 @@ class Navbar extends Component {
           <Item key='3' style={{ float: 'right' }} className='signout'>
             <Button type='danger' ghost>
               <a href='/api/signout'>
-                <Icon type='logout' /> Sign Out</a>
+                <Icon type='logout' /> Sign Out
+              </a>
             </Button>
           </Item>
         </Menu>
