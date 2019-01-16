@@ -24,6 +24,7 @@ app.use(passport.session());
 
 require('./routes/test_route')(app);
 require('./routes/auth_route')(app);
+require('./routes/unsplash_photo_api')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
