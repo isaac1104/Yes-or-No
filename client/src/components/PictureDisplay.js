@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
 import SelectButton from './SelectButton';
 
 class PictureDisplay extends Component {
