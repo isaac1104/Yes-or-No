@@ -16,7 +16,7 @@ const Landing = () => (
   <div style={styles.container} className='landing'>
     <div>
       <h1 style={{ marginBottom: '1em' }} >
-        <Icon type='heart' theme='filled' className='landing-heart-icon' /> or <Icon type='close-circle' className='landing-close-icon' />
+        <Icon type='heart' theme='filled' className='landing-heart-icon' /> or <Icon type='close' className='landing-close-icon' />
       </h1>
       <GoogleButton />
     </div>
