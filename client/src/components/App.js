@@ -1,5 +1,7 @@
 import React, { Component, Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { authUser } from '../actions';
 import requireAuth from './utils/requireAuth';
 import Spinner from './Spinner';
 import Navbar from './Navbar';
@@ -9,13 +11,28 @@ const Home = lazy(() => import('../pages/Home'));
 const Gallery = lazy(() => import('../pages/Gallery'));
 
 class App extends Component {
+  componentDidMount() {
+    this.props.authUser();
+  }
+
   render() {
     return (
       <BrowserRouter>
         <Suspense fallback={<Spinner />}>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route
+              exact
+              path='/'
+              render={() => {
+                const { userData } = this.props.auth;
+                if (userData) {
+                  return <Redirect to='home' />;
+                } else {
+                  return <Landing />;
+                }
+              }}
+            />
             <Route exact path='/home' component={requireAuth(Home)} />
             <Route exact path='/gallery' component={requireAuth(Gallery)} />
           </Switch>
@@ -25,4 +42,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ auth }) => {
+  return { auth }
+};
+
+export default connect(mapStateToProps, { authUser })(App);

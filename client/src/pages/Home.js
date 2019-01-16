@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { authUser } from '../actions';
 import PictureDisplay from '../components/PictureDisplay';
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.authUser();
-  }
-
   render() {
     const styles = {
       container: {
@@ -26,4 +20,4 @@ class Home extends Component {
   }
 }
 
-export default connect(null, { authUser })(Home);
+export default Home;
