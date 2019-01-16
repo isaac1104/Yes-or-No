@@ -8,7 +8,7 @@ const { Item } = Menu;
 
 class Navbar extends Component {
   state = {
-    currentTab: window.location.pathname === '/home' ? 'home' : 'gallery'
+    currentTab: window.location.pathname === '/gallery' ? 'gallery' : 'home'
   };
 
   handleTabClick = e => {
