@@ -27,7 +27,7 @@ class App extends Component {
               render={() => {
                 const { userData } = this.props.auth;
                 if (userData) {
-                  return <Redirect to='home' />;
+                  return <Redirect to='/home' />;
                 } else {
                   return <Landing />;
                 }
