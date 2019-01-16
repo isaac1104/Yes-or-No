@@ -55,12 +55,13 @@ class Home extends Component {
       container: {
         display: 'flex',
         justifyContent: 'space-evenly',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        padding: '1em'
       }
     };
 
     return (
-      <div style={styles.container} className='gallery'>
+      <div style={styles.container} className='home'>
         {this.renderLikedPhotos()}
       </div>
     );

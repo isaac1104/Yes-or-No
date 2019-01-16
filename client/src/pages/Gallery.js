@@ -13,7 +13,7 @@ class Gallery extends Component {
     };
 
     return (
-      <div style={styles.container} className='home'>
+      <div style={styles.container} className='gallery'>
         <PictureDisplay />
       </div>
     )
