@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import SelectButton from './SelectButton';
 import Spinner from './Spinner';
 import { connect } from 'react-redux';
@@ -10,26 +10,7 @@ class PictureDisplay extends Component {
   }
 
   renderPhoto() {
-    const { isFetching, data } = this.props.photo;
-    if (isFetching) {
-      return <Spinner />;
-    }
-
-    if (data.urls) {
-      return (
-        <img
-          className='photo'
-          src={data.urls.small}
-          alt={data.description}
-          style={{ width: '25em', height: '30em' }}
-        />
-      );
-    }
-
-    return null;
-  }
-
-  render() {
+    const { isFetching, data: { urls, description } } = this.props.photo;
     const styles = {
       frame: {
         height: '30em',
@@ -39,19 +20,36 @@ class PictureDisplay extends Component {
       buttonGroup: {
         marginTop: '2em'
       }
+    };
+
+    if (isFetching) {
+      return <Spinner />;
     }
 
-    return (
-      <div>
-        <div style={styles.frame}>
-          {this.renderPhoto()}
+    if (urls) {
+      return (
+        <div>
+          <div style={styles.frame}>
+            <img
+              className='photo'
+              src={urls.small}
+              alt={description}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+          <div style={styles.buttonGroup}>
+            <SelectButton title='Yee' type='primary' size='large' onClick={() => console.log(urls.small)} />
+            <SelectButton title='Nee' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
+          </div>
         </div>
-        <div style={styles.buttonGroup}>
-          <SelectButton title='Yee' type='primary' size='large' />
-          <SelectButton title='Nee' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
-        </div>
-      </div>
-    );
+      );
+    }
+
+    return null;
+  }
+
+  render() {
+    return <Fragment>{this.renderPhoto()}</Fragment>;
   }
 }
 
