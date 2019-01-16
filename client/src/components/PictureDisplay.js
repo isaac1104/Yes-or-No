@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import SelectButton from './SelectButton';
 import Spinner from './Spinner';
+import Picture from './Picture';
 import { connect } from 'react-redux';
 import { fetchUnsplashPhoto, saveUnsplashPhoto } from '../actions';
 
@@ -30,8 +31,7 @@ class PictureDisplay extends Component {
       return (
         <div>
           <div style={styles.frame}>
-            <img
-              className='photo'
+            <Picture
               src={urls.small}
               alt={description}
               style={{ width: '100%', height: '100%' }}
