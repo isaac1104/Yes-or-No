@@ -16,7 +16,14 @@ class PictureDisplay extends Component {
     }
 
     if (data.urls) {
-      return <img src={data.urls.small} alt={data.description} style={{ width: '25em', height: '30em' }} />;
+      return (
+        <img
+          className='photo'
+          src={data.urls.small}
+          alt={data.description}
+          style={{ width: '25em', height: '30em' }}
+        />
+      );
     }
 
     return null;
