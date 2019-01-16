@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchLikedPhotos } from '../actions';
+import { Button, Icon } from 'antd';
 import Spinner from '../components/Spinner';
 import Picture from '../components/Picture';
 
@@ -16,7 +17,7 @@ class Gallery extends Component {
     }
 
     if (data.length === 0) {
-      return <h1>You don't have any liked photos</h1>;
+      return <h3 style={{ marginTop: '10em' }}>You don't have any liked photos</h3>;
     }
 
     return data.map((photo, i) => {
@@ -30,6 +31,7 @@ class Gallery extends Component {
             alt={photo.id}
             style={{ width: '100%', height: '100%' }}
           />
+          <Button block type='danger'><Icon type='delete' /></Button>
         </div>
       );
     });
@@ -39,7 +41,7 @@ class Gallery extends Component {
     const styles = {
       container: {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         flexWrap: 'wrap'
       }
     };
