@@ -15,6 +15,13 @@ class Navbar extends Component {
   }
 
   render() {
+    const styles = {
+      navbar: {
+        position: 'sticky',
+        top: 0
+      }
+    };
+
     if (this.props.auth.userData) {
       return (
         <Menu
@@ -23,6 +30,7 @@ class Navbar extends Component {
           mode='horizontal'
           theme='dark'
           className='navbar'
+          style={styles.navbar}
         >
           <Item key='1'>
             <Link to='/home'><Icon type='home' /> Home</Link>
