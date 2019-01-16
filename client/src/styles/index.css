@@ -32,6 +32,16 @@ h1, h2, h3, h4, h5, h6, p {
   color: #ffffff !important;
 }
 
+.landing-heart-icon {
+  color: #00aca4;
+  font-size: 2em;
+}
+
+.landing-close-icon {
+  color: tomato;
+  font-size: 2em;
+}
+
 .loginBtn {
   box-sizing: border-box;
   position: relative;

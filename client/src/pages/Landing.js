@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'antd';
 import GoogleButton from '../components/GoogleButton';
 
 const styles = {
@@ -14,7 +15,9 @@ const styles = {
 const Landing = () => (
   <div style={styles.container} className='landing'>
     <div>
-      <h1>Yes or No</h1>
+      <h1 style={{ marginBottom: '1em' }} >
+        <Icon type='heart' theme='filled' className='landing-heart-icon' /> or <Icon type='close-circle' className='landing-close-icon' />
+      </h1>
       <GoogleButton />
     </div>
   </div>

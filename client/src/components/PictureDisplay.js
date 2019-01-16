@@ -45,7 +45,7 @@ class PictureDisplay extends Component {
               size='large'
               onClick={() => this.props.saveUnsplashPhoto({ url: urls.small }, this.props.fetchUnsplashPhoto)}
             />
-            <SelectButton icon='close' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
+            <SelectButton icon='close-circle' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
           </div>
         </div>
       );
