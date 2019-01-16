@@ -1,4 +1,4 @@
-import { REQUEST_LIKED_PHOTO, RECEIVE_LIKED_PHOTO, REJECT_LIKED_PHOTO } from '../actions/types';
+import { REQUEST_LIKED_PHOTO, RECEIVE_LIKED_PHOTO, REJECT_LIKED_PHOTO, DELETE_LIKED_PHOTO } from '../actions/types';
 
 const INITIAL_STATE = {
   isFetching: false,
@@ -28,6 +28,12 @@ const likedPhotosReducer = (state = INITIAL_STATE, action) => {
         data: [],
         error: action.payload
       };
+    case DELETE_LIKED_PHOTO:
+      return {
+        ...state,
+        data: state.data.filter(photo => photo.url !== action.payload),
+        error: ''
+      }
     default:
       return state;
   }
