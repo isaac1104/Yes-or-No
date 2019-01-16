@@ -42,6 +42,13 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 2em;
 }
 
+.backtop {
+  border-radius: 50%;
+  border-color: #73f2e5 !important;
+  background-color: #73f2e5 !important;
+  color: #ffffff !important;
+}
+
 .loginBtn {
   box-sizing: border-box;
   position: relative;

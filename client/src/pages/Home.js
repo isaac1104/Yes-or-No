@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchLikedPhotos, deleteSavedPhoto } from '../actions';
-import { Button, Icon } from 'antd';
+import { BackTop, Button, Icon } from 'antd';
 import Spinner from '../components/Spinner';
 import Picture from '../components/Picture';
 
@@ -32,6 +32,7 @@ class Home extends Component {
           style={{ margin: '2em 0 2em 0', width: '25em', height: '30em' }}
           key={i}
         >
+          <BackTop className='backtop' />
           <Picture
             src={photo.url}
             alt={photo.id}
