@@ -1,4 +1,4 @@
-import React, { Component, Suspense, lazy } from 'react';
+import React, { Component, Suspense, Fragment, lazy } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authUser } from '../actions';
@@ -18,8 +18,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Suspense fallback={<Spinner />}>
+        <Fragment>
           <Navbar />
+          <Suspense fallback={<Spinner />}>
           <Switch>
             <Route
               exact
@@ -37,6 +38,7 @@ class App extends Component {
             <Route exact path='/gallery' component={requireAuth(Gallery)} />
           </Switch>
         </Suspense>
+        </Fragment>
       </BrowserRouter>
     );
   }
