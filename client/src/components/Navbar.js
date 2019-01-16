@@ -8,7 +8,7 @@ const { Item } = Menu;
 
 class Navbar extends Component {
   state = {
-    currentTab: window.location.pathname === '/home' ? '1' : '2'
+    currentTab: window.location.pathname === '/home' ? 'home' : 'gallery'
   };
 
   handleTabClick = e => {
@@ -35,10 +35,10 @@ class Navbar extends Component {
             className='navbar'
             style={styles.navbar}
             >
-              <Item key='1'>
+              <Item key='home'>
                 <Link to='/home'><Icon type='home' /> Home</Link>
               </Item>
-              <Item key='2'>
+              <Item key='gallery'>
                 <Link to='/gallery'><Icon type='picture' /> Gallery</Link>
               </Item>
               <Item key='3' style={{ float: 'right' }} className='signout'>
