@@ -11,3 +11,14 @@ export const authUser = () => async dispatch => {
     dispatch({ type: types.AUTH_ERROR, payload: e });
   }
 };
+
+export fetchUnsplashPicture = () => async dispatch => {
+  dispatch({ type: types.REQUEST_UNSPLASH_PHOTO, payload: true });
+  try {
+    const request = await axios.get('/api/getPhoto');
+    const { data } = request;
+    dispatch({ type: types.RECEIVE_UNSPLASH_PHOTO, payload: data });
+  } catch (e) {
+    dispatch({ type: types.REJECT_UNSPLASH_PHOTO, payload: e });
+  }
+};
