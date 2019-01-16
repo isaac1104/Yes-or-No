@@ -39,12 +39,13 @@ class PictureDisplay extends Component {
           </div>
           <div style={styles.buttonGroup}>
             <SelectButton
-              title='Yes'
+              icon='heart'
+              theme='filled'
               type='primary'
               size='large'
               onClick={() => this.props.saveUnsplashPhoto({ url: urls.small }, this.props.fetchUnsplashPhoto)}
             />
-            <SelectButton title='No' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
+            <SelectButton icon='close' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
           </div>
         </div>
       );

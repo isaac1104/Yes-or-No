@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Icon } from 'antd';
 
 const SelectButton = props => {
   return (
@@ -9,7 +9,7 @@ const SelectButton = props => {
       style={{ width: '50%' }}
       onClick={props.onClick}
     >
-      {props.title}
+      <Icon type={props.icon} theme={props.theme} />
     </Button>
   )
 };
