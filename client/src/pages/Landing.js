@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
-import GoogleButton from '../components/GoogleButton';
+import AuthButton from '../components/AuthButton';
 
 const styles = {
   container: {
@@ -18,7 +18,7 @@ const Landing = () => (
       <h1 style={{ marginBottom: '1em' }} >
         <Icon type='heart' theme='filled' className='landing-heart-icon' /> or <Icon type='close' className='landing-close-icon' />
       </h1>
-      <GoogleButton />
+      <AuthButton platform='google' />
     </div>
   </div>
 );
