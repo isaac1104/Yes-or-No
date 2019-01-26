@@ -19,7 +19,7 @@ class Home extends Component {
     if (data.length === 0) {
       return (
         <div style={{ marginTop: '10em', textAlign: 'center' }}>
-          <h3>Welcome, {this.props.auth.userData.firstName} !</h3>
+          <h3>Welcome, {this.props.auth.userData.username} !</h3>
           <h3>Check out the gallery & save whatever photos you like</h3>
           <h3>Your liked photos will be displayed here</h3>
         </div>
