@@ -19,6 +19,7 @@ const Landing = () => (
         <Icon type='heart' theme='filled' className='landing-heart-icon' /> or <Icon type='close' className='landing-close-icon' />
       </h1>
       <AuthButton platform='google' />
+      <AuthButton platform='facebook' />
     </div>
   </div>
 );
