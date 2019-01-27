@@ -21,23 +21,23 @@ class App extends Component {
         <Fragment>
           <Navbar />
           <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route
-              exact
-              path='/'
-              render={() => {
-                const { userData } = this.props.auth;
-                if (userData) {
-                  return <Redirect to='/home' />;
-                } else {
-                  return <Landing />;
-                }
-              }}
-            />
-            <Route exact path='/home' component={requireAuth(Home)} />
-            <Route exact path='/gallery' component={requireAuth(Gallery)} />
-          </Switch>
-        </Suspense>
+            <Switch>
+              <Route
+                exact
+                path='/'
+                render={() => {
+                  const { userData } = this.props.auth;
+                  if (userData) {
+                    return <Redirect to='/home' />;
+                  } else {
+                    return <Landing />;
+                  }
+                }}
+              />
+              <Route exact path='/home' component={requireAuth(Home)} />
+              <Route exact path='/gallery' component={requireAuth(Gallery)} />
+            </Switch>
+          </Suspense>
         </Fragment>
       </BrowserRouter>
     );
