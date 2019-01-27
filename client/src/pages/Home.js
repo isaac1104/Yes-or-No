@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import LazyLoad from 'react-lazyload';
 import { fetchLikedPhotos, deleteSavedPhoto } from '../actions';
 import { BackTop, Button, Icon } from 'antd';
 import Spinner from '../components/Spinner';
@@ -32,12 +33,13 @@ class Home extends Component {
           style={{ margin: '2em 0 2em 0', width: '25em', height: '30em' }}
           key={i}
         >
-          <BackTop className='backtop' />
-          <Picture
-            src={photo.url}
-            alt={photo.id}
-            style={{ width: '100%', height: '100%' }}
-          />
+          <LazyLoad once>
+            <Picture
+              src={photo.url}
+              alt={photo.id}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </LazyLoad>
           <Button
             block
             type='danger'
@@ -63,6 +65,7 @@ class Home extends Component {
     return (
       <div style={styles.container} className='home'>
         {this.renderLikedPhotos()}
+        <BackTop className='backtop' />
       </div>
     );
   }
