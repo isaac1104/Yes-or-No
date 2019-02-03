@@ -33,7 +33,10 @@ class Home extends Component {
           style={{ margin: '2em 0 2em 0', width: '25em', height: '30em' }}
           key={i}
         >
-          <LazyLoad once>
+          <LazyLoad
+            height={'100%'}
+            once
+          >
             <Picture
               src={photo.url}
               alt={photo.id}
