@@ -12,10 +12,14 @@ export const authUser = () => async dispatch => {
   }
 };
 
-export const fetchUnsplashPhoto = () => async dispatch => {
+export const fetchUnsplashPhoto = category => async dispatch => {
   dispatch({ type: types.REQUEST_UNSPLASH_PHOTO, payload: true });
   try {
-    const request = await axios.get('/api/get_photo');
+    const request = await axios.get('/api/get_photo', {
+      params: {
+        category
+      }
+    });
     const { data } = request;
     dispatch({ type: types.RECEIVE_UNSPLASH_PHOTO, payload: data });
   } catch (e) {

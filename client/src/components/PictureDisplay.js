@@ -7,12 +7,20 @@ import { fetchUnsplashPhoto, saveUnsplashPhoto } from '../actions';
 
 class PictureDisplay extends Component {
   componentDidMount() {
-    this.props.fetchUnsplashPhoto();
+    const { category } = this.props.match.params;
+    this.props.fetchUnsplashPhoto(category);
   }
 
   renderPhoto() {
     const { isFetching, data: { urls, description } } = this.props.photo;
+    const { category } = this.props.match.params;
     const styles = {
+      container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '80vh'
+      },
       frame: {
         height: '25em',
         width: '25em',
@@ -29,23 +37,25 @@ class PictureDisplay extends Component {
 
     if (urls) {
       return (
-        <div>
-          <div style={styles.frame}>
-            <Picture
-              src={urls.small}
-              alt={description}
-              style={{ width: '100%', height: '100%' }}
-            />
-          </div>
-          <div style={styles.buttonGroup}>
-            <SelectButton
-              icon='heart'
-              theme='filled'
-              type='primary'
-              size='large'
-              onClick={() => this.props.saveUnsplashPhoto({ url: urls.small }, this.props.fetchUnsplashPhoto)}
-            />
-            <SelectButton icon='close' type='danger' size='large' onClick={this.props.fetchUnsplashPhoto} />
+        <div style={styles.container}>
+          <div>
+            <div style={styles.frame}>
+              <Picture
+                src={urls.small}
+                alt={description}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            <div style={styles.buttonGroup}>
+              <SelectButton
+                icon='heart'
+                theme='filled'
+                type='primary'
+                size='large'
+                onClick={() => this.props.saveUnsplashPhoto({ url: urls.small }, this.props.fetchUnsplashPhoto(category))}
+              />
+              <SelectButton icon='close' type='danger' size='large' onClick={() => this.props.fetchUnsplashPhoto(category)} />
+            </div>
           </div>
         </div>
       );

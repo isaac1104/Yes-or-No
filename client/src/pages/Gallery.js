@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PictureDisplay from '../components/PictureDisplay';
+import CategoryButton from '../components/CategoryButton';
 
 class Gallery extends Component {
   render() {
@@ -14,7 +14,12 @@ class Gallery extends Component {
 
     return (
       <div style={styles.container} className='gallery'>
-        <PictureDisplay />
+        <CategoryButton category='Animals' />
+        <CategoryButton category='Architecture' />
+        <CategoryButton category='Fashion' />
+        <CategoryButton category='Food & Drink' />
+        <CategoryButton category='Nature' />
+        <CategoryButton category='Travel' />
       </div>
     )
   }
