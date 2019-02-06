@@ -5,7 +5,7 @@
 Yes or No App will show you a random photo from Unsplash one at a time. If you like the photo, simply click 🧡 to save it to view later. If the photo doesn't interest you, simple click X to see next one.
 
 * Although this app was made to work both equally for web and mobile, it was designed to have optimal user experience when viewed on mobile.
-* Mobile version of this app is still wip.
+* Mobile version of this app is still wip. Please check out the app on your mobile device or on Google Chrome's device toolbar in the meantime.
 
 ### Go through the random photos to find what you like.
 ![demo-1](https://user-images.githubusercontent.com/28583016/51276377-6cea0200-1989-11e9-9f20-ddab55deb519.PNG)
