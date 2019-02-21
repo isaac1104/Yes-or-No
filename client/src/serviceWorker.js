@@ -114,9 +114,19 @@ function checkValidServiceWorker(swUrl, config) {
             window.location.reload();
           });
         });
+
+        navigator.serviceWorker.getRegistrations()
+        .then(registrationsArray => {
+          registrationsArray[0].update();
+        });
       } else {
         // Service worker found. Proceed as normal.
         registerValidSW(swUrl, config);
+
+        navigator.serviceWorker.getRegistrations()
+        .then(registrationsArray => {
+          registrationsArray[0].update();
+        });
       }
     })
     .catch(() => {
