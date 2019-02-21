@@ -114,19 +114,9 @@ function checkValidServiceWorker(swUrl, config) {
             window.location.reload();
           });
         });
-
-        navigator.serviceWorker.getRegistrations()
-        .then(registrationsArray => {
-          registrationsArray[0].update();
-        });
       } else {
         // Service worker found. Proceed as normal.
         registerValidSW(swUrl, config);
-
-        navigator.serviceWorker.getRegistrations()
-        .then(registrationsArray => {
-          registrationsArray[0].update();
-        });
       }
     })
     .catch(() => {
@@ -134,6 +124,15 @@ function checkValidServiceWorker(swUrl, config) {
         'No internet connection found. App is running in offline mode.'
       );
     });
+}
+
+function spaNavigate(url) {
+  // Force a service worker update check:
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(function(registration) {
+      registration.update();
+    });
+  }
 }
 
 export function unregister() {
