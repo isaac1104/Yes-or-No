@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(window);
     return (
       <BrowserRouter>
         <Fragment>

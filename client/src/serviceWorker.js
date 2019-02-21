@@ -116,7 +116,6 @@ function checkValidServiceWorker(swUrl, config) {
         });
       } else {
         // Service worker found. Proceed as normal.
-        console.log('test');
         registerValidSW(swUrl, config);
       }
     })
