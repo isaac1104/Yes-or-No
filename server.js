@@ -12,7 +12,7 @@ require('./models/LikedPhotos');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongodbURI);
+mongoose.connect(keys.mongodbURI, { useNewUrlParser: true });
 
 app.use(express.json());
 app.use(cookieSession({
@@ -22,7 +22,6 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/test_route')(app);
 require('./routes/auth_route')(app);
 require('./routes/unsplash_photo_api')(app);
 require('./routes/liked_photos_api')(app);
